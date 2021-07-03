@@ -6,12 +6,16 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class TestBase {
-   public static Properties prop;
+    public static Properties prop;
+    public int RESPONSE_STATUS_CODE_200 = 200;
+    public int RESPONSE_STATUS_CODE_300 = 300;
+    public int RESPONSE_STATUS_CODE_400 = 400;
+    public int RESPONSE_STATUS_CODE_500 = 500;
 
     public TestBase() {
-        try{
+        try {
             prop = new Properties();
-            FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+"/src/main/java/com/qa/config/config.properties");
+            FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/com/qa/config/config.properties");
             prop.load(ip);
         } catch (IOException e) {
             e.printStackTrace();
